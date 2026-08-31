@@ -176,6 +176,32 @@ h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px;}
 }
 .captura figcaption span{display:block;font-weight:500;color:var(--gris);letter-spacing:0;margin-top:3px;}
 
+/* ====== STAND ACTUAL ====== */
+.stand-actual{
+  display:grid;grid-template-columns:minmax(240px,340px) 1fr;gap:32px;
+  align-items:start;margin-bottom:32px;
+}
+.stand-actual img{
+  display:block;width:100%;height:auto;border-radius:8px;
+  border:1px solid var(--linea);
+  box-shadow:0 18px 44px -26px rgba(0,39,77,.55);
+}
+.stand-actual .nota h3{margin-bottom:10px;}
+.stand-actual .nota p{color:var(--gris);font-size:16px;margin-bottom:12px;}
+.stand-actual figcaption{
+  font-family:"Montserrat",sans-serif;font-size:12.5px;font-weight:700;
+  letter-spacing:.05em;color:var(--gris);margin-top:14px;
+  padding-left:14px;border-left:3px solid var(--oro);
+}
+.tag-est{
+  display:inline-block;font-family:"Montserrat",sans-serif;
+  font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 9px;border-radius:3px;white-space:nowrap;
+}
+.est-si{background:var(--verde-tinte);color:var(--verde);}
+.est-no{background:var(--azul-tinte);color:var(--azul);}
+@media (max-width:640px){ .stand-actual{grid-template-columns:1fr;gap:22px;} }
+
 /* ====== LÍNEA DE TIEMPO ====== */
 .linea-tiempo{position:relative;padding-left:34px;}
 .linea-tiempo::before{
@@ -556,6 +582,17 @@ a{color:var(--azul);}
       <h2>Cómo se acomoda el toldo</h2>
       <p class="dek">La mesa va al costado y nunca cruzada al frente. Una mesa que hace de barrera corta el paso y apaga el stand.</p>
     </div>
+
+    <figure class="stand-actual rv">
+      <img src="img/stand-actual.jpg" alt="Stand de Educación Continua del Tec en un evento previo: lona azul de fondo con código QR, mesa con mantel institucional y tres sillas." width="760" height="1013" loading="lazy">
+      <div class="nota">
+        <h3>La lona y el mantel ya existen</h3>
+        <p>Educación Continua ya cuenta con lona de fondo y mantel institucional, montados en formato de mesa larga con sillas. Eso reduce la producción a los elementos propios de esta activación: los letreros del QR, el muro y el letrero de Stroop.</p>
+        <p>Dos ajustes respecto a este montaje. La lona actual lleva otro mensaje, así que el titular de la activación tendría que ir en un letrero rígido aparte, o mandarse a producir una lona nueva. Y la mesa aquí está al frente y llena de impresos: en el Callejero va al costado y sin ningún papel encima.</p>
+        <figcaption>Montaje de Educación Continua en un evento previo</figcaption>
+      </div>
+    </figure>
+
     <div class="plano rv">
       <svg viewBox="0 0 520 400" role="img" aria-label="Planta del toldo de tres por tres metros con la lona al fondo, la mesa de test y cuatro sillas al costado izquierdo, entrada libre a la derecha y el caballete del muro al filo de la banqueta.">
         <defs>
@@ -598,21 +635,21 @@ a{color:var(--azul);}
 
     <div class="scroll-x rv" style="margin-top:24px">
       <table>
-        <thead><tr><th>Material que llevamos</th><th>Para qué</th></tr></thead>
+        <thead><tr><th>Material que llevamos</th><th>Para qué</th><th>Estatus</th></tr></thead>
         <tbody>
-          <tr><td><strong>Lona de fondo 2.90 × 2.20 m</strong></td><td>Titular, marca, QR grande y las ocho inteligencias</td></tr>
-          <tr><td><strong>Faldón de mesa impreso</strong></td><td>Marca a la altura de quien pasa sin detenerse</td></tr>
-          <tr><td><strong>2 letreros rígidos en caballete</strong></td><td>QR repetido y la promesa: test gratis en cuatro minutos</td></tr>
-          <tr><td><strong>1 letrero informativo</strong></td><td>Fecha de arranque y modalidad del curso Neurobienestar</td></tr>
-          <tr><td><strong>Lona plastificada y marcadores borrables</strong></td><td>Muro de Intenciones y récords de la noche</td></tr>
-          <tr><td><strong>Letrero rígido de Stroop</strong></td><td>Reto 3. Se reutiliza indefinidamente</td></tr>
-          <tr><td><strong>1 pelota blanda</strong></td><td>Reto 2</td></tr>
-          <tr><td><strong>Stickers temporales, 8 diseños</strong></td><td>Reconocimiento por escribir en el muro</td></tr>
-          <tr><td><strong>Contenedor cerrado</strong></td><td>Recolección de los respaldos de los stickers</td></tr>
-          <tr><td><strong>3 o 4 tablets</strong></td><td>Para quien no trae celular con cámara</td></tr>
-          <tr><td><strong>Power banks</strong></td><td>Cinco horas de operación sin garantía de corriente</td></tr>
-          <tr><td><strong>Lámpara LED</strong></td><td>Después de las 19:50 el QR no se escanea sin luz dirigida</td></tr>
-          <tr><td><strong>Garrafón y vasos reutilizables</strong></td><td>Hidratación del equipo y de quien lo necesite</td></tr>
+          <tr><td><strong>Lona de fondo</strong></td><td>Marca y superficie de captación. La actual sirve como fondo; el titular iría en letrero aparte</td><td><span class="tag-est est-si">Ya la tenemos</span></td></tr>
+          <tr><td><strong>Mantel institucional</strong></td><td>Marca a la altura de quien pasa sin detenerse</td><td><span class="tag-est est-si">Ya lo tenemos</span></td></tr>
+          <tr><td><strong>2 letreros rígidos en caballete</strong></td><td>Titular de la activación, QR grande y la promesa: test gratis en cuatro minutos</td><td><span class="tag-est est-no">Por producir</span></td></tr>
+          <tr><td><strong>1 letrero informativo</strong></td><td>Fecha de arranque y modalidad del curso Neurobienestar</td><td><span class="tag-est est-no">Por producir</span></td></tr>
+          <tr><td><strong>Lona plastificada y marcadores borrables</strong></td><td>Muro de Intenciones y récords de la noche</td><td><span class="tag-est est-no">Por producir</span></td></tr>
+          <tr><td><strong>Letrero rígido de Stroop</strong></td><td>Reto 3. Se reutiliza indefinidamente</td><td><span class="tag-est est-no">Por producir</span></td></tr>
+          <tr><td><strong>Stickers temporales, 8 diseños</strong></td><td>Reconocimiento por escribir en el muro</td><td><span class="tag-est est-no">Por producir</span></td></tr>
+          <tr><td><strong>1 pelota blanda</strong></td><td>Reto 2</td><td><span class="tag-est est-no">Por conseguir</span></td></tr>
+          <tr><td><strong>Contenedor cerrado</strong></td><td>Recolección de los respaldos de los stickers</td><td><span class="tag-est est-no">Por conseguir</span></td></tr>
+          <tr><td><strong>3 o 4 tablets</strong></td><td>Para quien no trae celular con cámara</td><td><span class="tag-est est-no">Por conseguir</span></td></tr>
+          <tr><td><strong>Power banks</strong></td><td>Cinco horas de operación sin garantía de corriente</td><td><span class="tag-est est-no">Por conseguir</span></td></tr>
+          <tr><td><strong>Lámpara LED</strong></td><td>Después de las 19:50 el QR no se escanea sin luz dirigida</td><td><span class="tag-est est-no">Por conseguir</span></td></tr>
+          <tr><td><strong>Garrafón y vasos reutilizables</strong></td><td>Hidratación del equipo y de quien lo necesite</td><td><span class="tag-est est-no">Por conseguir</span></td></tr>
         </tbody>
       </table>
     </div>
