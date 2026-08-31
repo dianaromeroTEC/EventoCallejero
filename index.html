@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Qué vas a aprender este año? · Callejero Distrito Tec</title>
+<meta name="description" content="Propuesta de activación de Educación Continua del Tec de Monterrey para el Callejero de Distrito Tec, edición del 20 de septiembre de 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --azul:#003D82;
+  --azul-profundo:#00274D;
+  --azul-medio:#12559E;
+  --azul-claro:#7FB3E8;
+  --azul-tinte:#E8F0FA;
+  --oro:#FFB81C;
+  --oro-tinte:#FFF4DA;
+  --tinta:#14202E;
+  --gris:#5A6879;
+  --linea:#DDE3EA;
+  --nieve:#F4F7FA;
+  --blanco:#FFFFFF;
+  --verde:#1E7A54;
+  --verde-tinte:#E2F1EA;
+  --rojo:#B3341A;
+  --rojo-tinte:#FBE7E1;
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--blanco);
+  color:var(--tinta);
+  font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.mont{font-family:"Montserrat","Segoe UI",system-ui,sans-serif;}
+
+/* barra de progreso */
+#barra{
+  position:fixed;top:0;left:0;height:4px;width:0%;
+  background:var(--oro);z-index:100;transition:width .1s linear;
+}
+
+/* ====== HERO ====== */
+.hero{
+  background:var(--azul-profundo);
+  background-image:radial-gradient(ellipse 90% 70% at 78% 12%, rgba(18,85,158,.85) 0%, transparent 62%),
+                   radial-gradient(ellipse 70% 60% at 8% 95%, rgba(0,61,130,.9) 0%, transparent 60%);
+  color:var(--blanco);
+  padding:76px 0 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
+  background:var(--oro);
+}
+.contenedor{max-width:1060px;margin:0 auto;padding:0 28px;}
+.hero .lockup{
+  font-family:"Montserrat",sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--azul-claro);margin-bottom:26px;
+}
+.hero h1{
+  font-size:clamp(40px,7.4vw,86px);
+  font-weight:900;line-height:.98;letter-spacing:-.03em;
+  margin-bottom:22px;max-width:16ch;
+}
+.hero h1 em{font-style:normal;color:var(--oro);}
+.hero .bajada{
+  font-size:clamp(17px,2.1vw,21px);
+  max-width:56ch;color:rgba(255,255,255,.86);margin-bottom:44px;
+}
+.datos{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));
+  gap:1px;background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.16);border-radius:5px;overflow:hidden;
+}
+.dato{background:var(--azul-profundo);padding:17px 19px;}
+.dato .et{
+  font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--azul-claro);
+  margin-bottom:5px;
+}
+.dato .vl{font-family:"Montserrat",sans-serif;font-size:16px;font-weight:600;line-height:1.3;}
+
+/* ====== SECCIONES ====== */
+section{padding:80px 0;}
+section.claro{background:var(--nieve);}
+.encabezado{margin-bottom:44px;}
+.num{
+  font-family:"Montserrat",sans-serif;font-size:12px;font-weight:800;
+  letter-spacing:.18em;color:var(--oro);display:block;margin-bottom:12px;
+}
+h2{
+  font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.025em;
+  line-height:1.08;margin-bottom:14px;max-width:20ch;
+}
+.dek{color:var(--gris);max-width:62ch;font-size:18px;}
+h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px;}
+
+/* ====== TARJETAS ====== */
+.rejilla{display:grid;gap:20px;}
+.r3{grid-template-columns:repeat(auto-fit,minmax(268px,1fr));}
+.r2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+.tarjeta{
+  background:var(--blanco);border:1px solid var(--linea);border-radius:8px;
+  padding:30px 28px;transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s ease, border-color .28s ease;
+}
+.tarjeta:hover{transform:translateY(-5px);box-shadow:0 16px 40px -20px rgba(0,39,77,.45);border-color:var(--azul-claro);}
+.tarjeta p{color:var(--gris);font-size:16px;}
+.tarjeta p + p{margin-top:12px;}
+.etiqueta{
+  display:inline-block;font-family:"Montserrat",sans-serif;
+  font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 10px;border-radius:3px;margin-bottom:16px;
+  background:var(--azul-tinte);color:var(--azul);
+}
+.etiqueta.oro{background:var(--oro-tinte);color:#9A6B00;}
+
+/* ====== RETOS ====== */
+.reto{
+  background:var(--blanco);border:1px solid var(--linea);border-radius:8px;
+  overflow:hidden;transition:transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s ease;
+}
+.reto:hover{transform:translateY(-5px);box-shadow:0 16px 40px -20px rgba(0,39,77,.45);}
+.reto-top{
+  background:var(--azul);color:var(--blanco);padding:20px 24px;
+  display:flex;align-items:center;gap:15px;
+}
+.reto-n{
+  font-family:"Montserrat",sans-serif;font-size:30px;font-weight:900;
+  color:var(--oro);line-height:1;
+}
+.reto-top h3{margin:0;font-size:17px;color:var(--blanco);}
+.reto-cuerpo{padding:22px 24px 24px;}
+.reto-cuerpo > p{color:var(--gris);font-size:15.5px;margin-bottom:16px;}
+.niveles{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+.nivel{
+  display:flex;align-items:center;gap:11px;font-size:14.5px;
+  padding:8px 12px;background:var(--nieve);border-radius:4px;
+}
+.nivel b{
+  font-family:"Montserrat",sans-serif;font-size:10px;font-weight:800;
+  color:var(--azul);background:var(--blanco);border:1px solid var(--linea);
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;
+}
+.marcador{
+  font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gris);
+  padding-top:14px;border-top:1px solid var(--linea);
+}
+
+/* ====== LÍNEA DE TIEMPO ====== */
+.linea-tiempo{position:relative;padding-left:34px;}
+.linea-tiempo::before{
+  content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+  background:var(--linea);transform-origin:top;
+}
+.bloque{position:relative;padding-bottom:34px;}
+.bloque:last-child{padding-bottom:0;}
+.bloque::before{
+  content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;
+  border-radius:50%;background:var(--blanco);border:3px solid var(--linea);
+}
+.bloque.pico::before{background:var(--oro);border-color:var(--oro);}
+.bloque .hora{
+  font-family:"Montserrat",sans-serif;font-weight:800;font-size:15px;
+  color:var(--azul);letter-spacing:-.01em;margin-bottom:3px;
+}
+.bloque p{color:var(--gris);font-size:16px;}
+.nota-sol{
+  display:inline-block;margin-top:10px;font-family:"Montserrat",sans-serif;
+  font-size:12.5px;font-weight:700;background:var(--oro-tinte);color:#9A6B00;
+  padding:5px 11px;border-radius:4px;
+}
+
+/* ====== PLANO ====== */
+.plano{
+  background:var(--blanco);border:1px solid var(--linea);border-radius:8px;
+  padding:32px;overflow-x:auto;
+}
+.plano svg{display:block;width:100%;min-width:440px;max-width:580px;margin:0 auto;height:auto;}
+.leyenda{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;
+  padding-top:22px;border-top:1px solid var(--linea);
+}
+.leyenda span{font-size:14.5px;color:var(--gris);display:flex;align-items:center;gap:9px;}
+.leyenda i{width:12px;height:12px;border-radius:3px;flex:none;display:block;}
+
+/* ====== LINEAMIENTOS ====== */
+.regla{
+  display:grid;grid-template-columns:30px 1fr 1.15fr;gap:18px;
+  padding:19px 22px;background:var(--blanco);
+  border:1px solid var(--linea);border-radius:7px;margin-bottom:10px;
+  transition:border-color .25s ease;
+}
+.regla:hover{border-color:var(--verde);}
+.palomita{
+  width:26px;height:26px;border-radius:50%;background:var(--verde-tinte);
+  color:var(--verde);display:grid;place-items:center;font-weight:800;font-size:15px;
+}
+.regla .qu{font-family:"Montserrat",sans-serif;font-weight:700;font-size:15.5px;}
+.regla .co{color:var(--gris);font-size:15.5px;}
+
+/* ====== MÉTRICAS ====== */
+.metricas{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;}
+.metrica{
+  background:var(--azul-profundo);color:var(--blanco);
+  border-radius:8px;padding:30px 26px;position:relative;overflow:hidden;
+}
+.metrica::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--oro);
+}
+.metrica .cifra{
+  font-family:"Montserrat",sans-serif;font-size:52px;font-weight:900;
+  line-height:1;letter-spacing:-.035em;color:var(--oro);
+  font-variant-numeric:tabular-nums;margin-bottom:10px;
+}
+.metrica .qu{font-family:"Montserrat",sans-serif;font-size:14.5px;font-weight:600;line-height:1.4;margin-bottom:12px;}
+.metrica .rango{
+  font-size:13px;color:var(--azul-claro);padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.18);font-variant-numeric:tabular-nums;
+}
+
+/* ====== TABLA ====== */
+.scroll-x{overflow-x:auto;border:1px solid var(--linea);border-radius:8px;background:var(--blanco);}
+table{border-collapse:collapse;width:100%;font-size:15.5px;min-width:540px;}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--linea);vertical-align:top;}
+thead th{
+  font-family:"Montserrat",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gris);
+  background:var(--nieve);
+}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--nieve);}
+
+/* ====== PENDIENTES ====== */
+.pendiente{
+  display:grid;grid-template-columns:34px 1fr;gap:16px;
+  padding:17px 0;border-bottom:1px solid var(--linea);
+}
+.pendiente:last-child{border-bottom:none;}
+.pendiente .pn{
+  font-family:"Montserrat",sans-serif;font-weight:800;font-size:14px;
+  color:var(--blanco);background:var(--azul);width:28px;height:28px;
+  border-radius:50%;display:grid;place-items:center;
+}
+.pendiente.alerta .pn{background:var(--rojo);}
+.pendiente .pt{font-size:16px;}
+.pendiente .pd{color:var(--gris);font-size:14.5px;display:block;margin-top:2px;}
+
+/* ====== CONSENTIMIENTO ====== */
+.casilla{
+  background:var(--blanco);border:1px solid var(--linea);border-left:4px solid var(--azul);
+  border-radius:6px;padding:20px 24px;margin-bottom:12px;font-size:16px;
+}
+.casilla .bx{color:var(--azul);font-weight:800;margin-right:8px;}
+.casilla .op{
+  font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin-left:6px;
+}
+
+/* ====== PIE ====== */
+footer{background:var(--azul-profundo);color:rgba(255,255,255,.7);padding:52px 0;font-size:15px;}
+footer strong{color:var(--blanco);font-family:"Montserrat",sans-serif;}
+footer p{max-width:70ch;margin-bottom:8px;}
+
+/* ====== ANIMACIÓN ====== */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);}
+.rv.vis{opacity:1;transform:none;}
+.hero .an{opacity:0;transform:translateY(22px);animation:sube .85s cubic-bezier(.2,.7,.3,1) forwards;}
+.hero .an:nth-child(1){animation-delay:.05s;}
+.hero .an:nth-child(2){animation-delay:.16s;}
+.hero .an:nth-child(3){animation-delay:.27s;}
+.hero .an:nth-child(4){animation-delay:.38s;}
+@keyframes sube{to{opacity:1;transform:none;}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .rv,.hero .an{opacity:1!important;transform:none!important;animation:none!important;transition:none!important;}
+  .tarjeta,.reto{transition:none;}
+}
+@media (max-width:680px){
+  section{padding:56px 0;}
+  .hero{padding:52px 0 46px;}
+  .regla{grid-template-columns:26px 1fr;}
+  .regla .co{grid-column:2;}
+}
+a{color:var(--azul);}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div id="barra"></div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="contenedor">
+    <p class="lockup an">Educación Continua · Tec de Monterrey</p>
+    <h1 class="an">¿Qué vas a <em>aprender</em> este año?</h1>
+    <p class="bajada an">Propuesta de activación para el Callejero de Distrito Tec. Edición piloto del domingo 20 de septiembre de 2026, frente al E1.</p>
+    <div class="datos an">
+      <div class="dato"><div class="et">Categoría</div><div class="vl">Sin fines de lucro</div></div>
+      <div class="dato"><div class="et">Horario</div><div class="vl">17:00 a 22:00 h</div></div>
+      <div class="dato"><div class="et">Espacio</div><div class="vl">Toldo 3 × 3 m</div></div>
+      <div class="dato"><div class="et">Equipo</div><div class="vl">2 personas</div></div>
+      <div class="dato"><div class="et">Asistencia del evento</div><div class="vl">3,700 personas</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= QUÉ ES ================= -->
+<section>
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">01</span>
+      <h2>Un stand que diagnostica, no que reparte información</h2>
+      <p class="dek">El visitante contesta un test de cuatro minutos, descubre cuál de las ocho inteligencias es la suya y recibe por correo los cursos que corresponden a ese resultado. Mientras tanto participa en retos rápidos de neurobienestar y escribe en un muro qué quiere aprender este año.</p>
+    </div>
+    <div class="rejilla r3">
+      <div class="tarjeta rv">
+        <span class="etiqueta">Restricción</span>
+        <h3>Nada de papel, nada de venta</h3>
+        <p>No hay folleto que dejar ni inscripción que cerrar en el lugar. El código QR y el correo posterior son el único camino que existe.</p>
+        <p>Por eso todo el stand trabaja para una sola cosa: conseguir un contacto con permiso explícito para escribirle después.</p>
+      </div>
+      <div class="tarjeta rv">
+        <span class="etiqueta">Restricción</span>
+        <h3>Nueve metros cuadrados, cinco horas</h3>
+        <p>No cabe una plática ni un taller sentado. Cabe rotación.</p>
+        <p>Todo lo que hacemos dura entre treinta segundos y cinco minutos, y se repite toda la noche.</p>
+      </div>
+      <div class="tarjeta rv">
+        <span class="etiqueta">Restricción</span>
+        <h3>La calle es joven y familiar</h3>
+        <p>Es un festival de domingo. El adulto mayor va, pero muchas veces llega acompañado.</p>
+        <p>Por eso el mismo test alimenta dos catálogos: Silver Economy para el público de 50 en adelante, Desarrollo Humano para quien lo acompaña.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPONENTES ================= -->
+<section class="claro">
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">02</span>
+      <h2>Tres cosas pasando al mismo tiempo</h2>
+      <p class="dek">Cada una tiene una función distinta en el embudo: una detiene, otra captura, la tercera demuestra.</p>
+    </div>
+    <div class="rejilla r3">
+      <div class="tarjeta rv">
+        <span class="etiqueta oro">Detiene</span>
+        <h3>El Muro de Intenciones</h3>
+        <p>Un caballete al filo de la banqueta con lona plastificada y marcador borrable: <strong>«Este año voy a aprender ______»</strong>.</p>
+        <p>La gente se para a leer lo que escribieron los demás y agrega lo suyo. Se borra y se reutiliza toda la noche.</p>
+        <p>Quien escribe se lleva un sticker temporal del Tec, a elegir entre ocho diseños que corresponden a las ocho inteligencias.</p>
+      </div>
+      <div class="tarjeta rv">
+        <span class="etiqueta oro">Captura</span>
+        <h3>El Test de Aptitudes</h3>
+        <p>Dieciséis preguntas sobre las ocho inteligencias múltiples. Cuatro minutos, en el celular de la persona o en una de nuestras tablets.</p>
+        <p>Devuelve las tres inteligencias dominantes, los cursos que embonan con ese perfil y un curso reto para la inteligencia más baja.</p>
+        <p><strong>26 cursos en el catálogo:</strong> dieciséis de Silver Economy y diez de Desarrollo Humano.</p>
+      </div>
+      <div class="tarjeta rv">
+        <span class="etiqueta oro">Demuestra</span>
+        <h3>El Mini Lab de Neurobienestar</h3>
+        <p>Cinco retos rápidos, de pie, en un metro cuadrado. Salen del temario del curso Lab Neurobienestar, de seis horas presenciales.</p>
+        <p>Cada uno se corre suelto en treinta segundos o encadenado como circuito de cinco minutos.</p>
+        <p>Todo el material cabe en una caja de zapatos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RETOS ================= -->
+<section>
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">03</span>
+      <h2>Los cinco retos</h2>
+      <p class="dek">Tres niveles cada uno. Subir de nivel es el premio, porque no podemos entregar nada físico. Los récords de la noche se anotan en una esquina del muro.</p>
+    </div>
+
+    <div class="rejilla r3">
+
+      <div class="reto rv">
+        <div class="reto-top"><span class="reto-n">1</span><h3>Los 10 segundos</h3></div>
+        <div class="reto-cuerpo">
+          <p>Equilibrio en un pie, con tres intentos, siguiendo el protocolo del estudio original.</p>
+          <div class="niveles">
+            <div class="nivel"><b>1</b>Ojos abiertos</div>
+            <div class="nivel"><b>2</b>Ojos cerrados</div>
+            <div class="nivel"><b>3</b>Ojos cerrados contando hacia atrás</div>
+          </div>
+          <div class="marcador">Marcador · segundos</div>
+        </div>
+      </div>
+
+      <div class="reto rv">
+        <div class="reto-top"><span class="reto-n">2</span><h3>El abecedario que rebota</h3></div>
+        <div class="reto-cuerpo">
+          <p>Dos personas se lanzan una pelota blanda. En cada pase, la siguiente letra.</p>
+          <div class="niveles">
+            <div class="nivel"><b>1</b>Abecedario corrido</div>
+            <div class="nivel"><b>2</b>De dos en dos: A, C, E…</div>
+            <div class="nivel"><b>3</b>Al revés desde la Z</div>
+          </div>
+          <div class="marcador">Marcador · hasta dónde llegan</div>
+        </div>
+      </div>
+
+      <div class="reto rv">
+        <div class="reto-top"><span class="reto-n">3</span><h3>Di el color, no la palabra</h3></div>
+        <div class="reto-cuerpo">
+          <p>Efecto Stroop sobre un letrero rígido con veinte palabras impresas en un color que no corresponde.</p>
+          <div class="niveles">
+            <div class="nivel"><b>1</b>En orden</div>
+            <div class="nivel"><b>2</b>Contrarreloj, 30 segundos</div>
+            <div class="nivel"><b>3</b>Alternando color y palabra</div>
+          </div>
+          <div class="marcador">Marcador · aciertos en 30 seg</div>
+        </div>
+      </div>
+
+      <div class="reto rv">
+        <div class="reto-top"><span class="reto-n">4</span><h3>Cuenta atrás en movimiento</h3></div>
+        <div class="reto-cuerpo">
+          <p>Marcar el paso mientras se resta desde cien. Todos fallan por igual, y por eso funciona: nadie queda en ridículo.</p>
+          <div class="niveles">
+            <div class="nivel"><b>1</b>De 1 en 1</div>
+            <div class="nivel"><b>2</b>De 3 en 3</div>
+            <div class="nivel"><b>3</b>De 7 en 7</div>
+          </div>
+          <div class="marcador">Marcador · hasta dónde sin error</div>
+        </div>
+      </div>
+
+      <div class="reto rv">
+        <div class="reto-top"><span class="reto-n">5</span><h3>30 segundos</h3></div>
+        <div class="reto-cuerpo">
+          <p>Fluidez verbal contra reloj. Es el gancho sonoro: seis personas gritando países se oyen desde media cuadra.</p>
+          <div class="niveles">
+            <div class="nivel"><b>1</b>Animales</div>
+            <div class="nivel"><b>2</b>Animales con M</div>
+            <div class="nivel"><b>3</b>Países</div>
+          </div>
+          <div class="marcador">Marcador · cuántos</div>
+        </div>
+      </div>
+
+      <div class="reto rv">
+        <div class="reto-top" style="background:var(--azul-medio)"><span class="reto-n">·</span><h3>Cierre: respiración 4-4-4</h3></div>
+        <div class="reto-cuerpo">
+          <p>Un minuto de respiración guiada. Cuatro tiempos inhalas, cuatro sostienes, cuatro exhalas.</p>
+          <p>No tiene marcador ni se filma. Sirve para que la gente se vaya tranquila en lugar de acelerada, y es literalmente lo que enseña el primer módulo del curso.</p>
+          <div class="marcador">Sin marcador</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rejilla r2" style="margin-top:22px">
+      <div class="tarjeta rv">
+        <h3>De dónde salen</h3>
+        <p>El reto de equilibrio replica el protocolo de la cohorte CLINIMEX, con 1,702 adultos de 51 a 75 años, publicado en el <em>British Journal of Sports Medicine</em>. Uno de cada cinco no lo logró.</p>
+        <p>Los ejercicios de doble tarea vienen de un programa de <em>brain gym</em> evaluado en 2026 en <em>Frontiers in Psychology</em>, con 75 adultos de 82 años de edad promedio y sin eventos adversos reportados.</p>
+      </div>
+      <div class="tarjeta rv" style="border-left:4px solid var(--rojo)">
+        <h3>Cómo se presentan</h3>
+        <p>Como ejercicios de entrenamiento, nunca como pruebas diagnósticas. No se interpreta el resultado de nadie, no se emiten valoraciones de salud y no se sugiere ninguna edad cerebral.</p>
+        <p>El cierre siempre es el mismo: <strong>esto se entrena</strong>. Y de ahí sale el dato de que el curso arranca el 23 de septiembre, a unas cuadras de donde estamos parados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAMA ================= -->
+<section class="claro">
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">04</span>
+      <h2>Cómo se ve la jornada</h2>
+      <p class="dek">El montaje entra en el horario que marca la organización. La operación cambia según cómo cambia la calle entre la tarde y la noche.</p>
+    </div>
+    <div class="linea-tiempo">
+      <div class="bloque rv">
+        <div class="hora">15:00 – 17:00 · Montaje</div>
+        <p>Lonas, mesas y caballete. Prueba de señal, carga de dispositivos y escaneo del QR a plena luz.</p>
+      </div>
+      <div class="bloque rv">
+        <div class="hora">17:00 – 18:00 · Calibración</div>
+        <p>Sol fuerte y poca gente. Corremos el flujo completo con los primeros visitantes y ajustamos el guion antes del pico.</p>
+      </div>
+      <div class="bloque pico rv">
+        <div class="hora">18:00 – 20:00 · Primer pico, familias</div>
+        <p>El muro trabaja a tope. Retos sueltos en continuo y circuito completo cuando se junta grupo.</p>
+      </div>
+      <div class="bloque pico rv">
+        <div class="hora">20:00 – 21:30 · Segundo pico, noche</div>
+        <p>Es la mejor ventana para el público adulto mayor: menos prisa y conversaciones más largas.</p>
+        <span class="nota-sol">Anochece cerca de las 19:50 · se enciende la lámpara del QR</span>
+      </div>
+      <div class="bloque rv">
+        <div class="hora">21:30 – 22:00 · Cierre</div>
+        <p>Última ronda, foto del muro lleno y desmontaje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLANO ================= -->
+<section>
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">05</span>
+      <h2>Cómo se acomoda el toldo</h2>
+      <p class="dek">La mesa va al costado y nunca cruzada al frente. Una mesa que hace de barrera corta el paso y apaga el stand.</p>
+    </div>
+    <div class="plano rv">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Planta del toldo de tres por tres metros con la lona al fondo, la mesa de test y cuatro sillas al costado izquierdo, entrada libre a la derecha y el caballete del muro al filo de la banqueta.">
+        <defs>
+          <marker id="flecha" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#FFB81C"/>
+          </marker>
+        </defs>
+        <rect x="70" y="40" width="380" height="250" fill="#F4F7FA" stroke="#C3CCD8" stroke-width="1.5" rx="4"/>
+        <text x="80" y="61" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="800" letter-spacing="1.4" fill="#5A6879">TOLDO 3 × 3 M</text>
+        <rect x="70" y="40" width="380" height="28" fill="#003D82" rx="4"/>
+        <text x="260" y="59" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11" font-weight="800" letter-spacing="1.1" fill="#FFFFFF">LONA DE FONDO · QR GRANDE</text>
+        <rect x="90" y="102" width="66" height="158" fill="#FFFFFF" stroke="#003D82" stroke-width="1.8" rx="4"/>
+        <text x="123" y="174" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="800" fill="#003D82">MESA</text>
+        <text x="123" y="188" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="800" fill="#003D82">DE TEST</text>
+        <rect x="166" y="106" width="30" height="30" fill="#FFFFFF" stroke="#C3CCD8" stroke-width="1.5" rx="4"/>
+        <rect x="166" y="146" width="30" height="30" fill="#FFFFFF" stroke="#C3CCD8" stroke-width="1.5" rx="4"/>
+        <rect x="166" y="186" width="30" height="30" fill="#FFFFFF" stroke="#C3CCD8" stroke-width="1.5" rx="4"/>
+        <rect x="166" y="226" width="30" height="30" fill="#FFFFFF" stroke="#C3CCD8" stroke-width="1.5" rx="4"/>
+        <text x="211" y="185" font-family="Montserrat, sans-serif" font-size="11" font-weight="600" fill="#5A6879">4 sillas</text>
+        <rect x="330" y="110" width="100" height="52" fill="#FFFFFF" stroke="#C3CCD8" stroke-width="1.5" rx="4"/>
+        <text x="380" y="133" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" font-weight="800" fill="#14202E">MESA 2 ·</text>
+        <text x="380" y="147" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" font-weight="800" fill="#14202E">RETOS</text>
+        <rect x="290" y="186" width="150" height="94" fill="none" stroke="#FFB81C" stroke-width="2" stroke-dasharray="6 4" rx="4"/>
+        <text x="365" y="228" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11.5" font-weight="800" letter-spacing=".6" fill="#9A6B00">ENTRADA</text>
+        <text x="365" y="244" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11.5" font-weight="800" letter-spacing=".6" fill="#9A6B00">LIBRE</text>
+        <line x1="40" y1="322" x2="480" y2="322" stroke="#C3CCD8" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text x="40" y="315" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="800" letter-spacing="1.3" fill="#5A6879">FILO DE LA BANQUETA</text>
+        <rect x="148" y="331" width="156" height="35" fill="#FFF4DA" stroke="#FFB81C" stroke-width="2" rx="4"/>
+        <text x="226" y="353" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10.5" font-weight="800" fill="#9A6B00">MURO DE INTENCIONES</text>
+        <path d="M470,348 L332,348" stroke="#FFB81C" stroke-width="2.5" fill="none" marker-end="url(#flecha)"/>
+        <text x="400" y="383" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11" font-weight="600" fill="#5A6879">flujo peatonal</text>
+        <path d="M382,336 C380,310 371,300 366,287" stroke="#FFB81C" stroke-width="2.5" fill="none" stroke-dasharray="5 4" marker-end="url(#flecha)"/>
+      </svg>
+      <div class="leyenda">
+        <span><i style="background:#003D82"></i>Superficie de marca y captación</span>
+        <span><i style="background:#FFB81C"></i>Gancho y entrada</span>
+        <span><i style="background:#FFFFFF;border:1.5px solid #C3CCD8"></i>Mobiliario de la organización</span>
+      </div>
+    </div>
+
+    <div class="scroll-x rv" style="margin-top:24px">
+      <table>
+        <thead><tr><th>Material que llevamos</th><th>Para qué</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lona de fondo 2.90 × 2.20 m</strong></td><td>Titular, marca, QR grande y las ocho inteligencias</td></tr>
+          <tr><td><strong>Faldón de mesa impreso</strong></td><td>Marca a la altura de quien pasa sin detenerse</td></tr>
+          <tr><td><strong>2 letreros rígidos en caballete</strong></td><td>QR repetido y la promesa: test gratis en cuatro minutos</td></tr>
+          <tr><td><strong>1 letrero informativo</strong></td><td>Fecha de arranque y modalidad del curso Neurobienestar</td></tr>
+          <tr><td><strong>Lona plastificada y marcadores borrables</strong></td><td>Muro de Intenciones y récords de la noche</td></tr>
+          <tr><td><strong>Letrero rígido de Stroop</strong></td><td>Reto 3. Se reutiliza indefinidamente</td></tr>
+          <tr><td><strong>1 pelota blanda</strong></td><td>Reto 2</td></tr>
+          <tr><td><strong>Stickers temporales, 8 diseños</strong></td><td>Reconocimiento por escribir en el muro</td></tr>
+          <tr><td><strong>Contenedor cerrado</strong></td><td>Recolección de los respaldos de los stickers</td></tr>
+          <tr><td><strong>3 o 4 tablets</strong></td><td>Para quien no trae celular con cámara</td></tr>
+          <tr><td><strong>Power banks</strong></td><td>Cinco horas de operación sin garantía de corriente</td></tr>
+          <tr><td><strong>Lámpara LED</strong></td><td>Después de las 19:50 el QR no se escanea sin luz dirigida</td></tr>
+          <tr><td><strong>Garrafón y vasos reutilizables</strong></td><td>Hidratación del equipo y de quien lo necesite</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LINEAMIENTOS ================= -->
+<section class="claro">
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">06</span>
+      <h2>Cómo cumplimos cada lineamiento</h2>
+      <p class="dek">Punto por punto, con lo que hacemos para cumplirlo.</p>
+    </div>
+    <div class="rv">
+      <div class="regla"><span class="palomita">✓</span><span class="qu">Nada de volantes ni folletos</span><span class="co">Toda la difusión va por QR, lona y letreros fijos. No imprimimos ni entregamos material de difusión.</span></div>
+      <div class="regla"><span class="palomita">✓</span><span class="qu">Cero residuos</span><span class="co">Muro y letrero de Stroop son reutilizables con marcador borrable. Lo único que se entrega es el sticker temporal, que se aplica sobre la piel; su respaldo se recolecta en el stand y se retira completo al desmontar.</span></div>
+      <div class="regla"><span class="palomita">✓</span><span class="qu">Nada de venta en el lugar</span><span class="co">No se cobra, no se inscribe y no se exhiben precios. La dinámica de redes es gratuita, no pide compra y el premio es un lugar en un curso, sin valor en efectivo.</span></div>
+      <div class="regla"><span class="palomita">✓</span><span class="qu">Consentimiento explícito</span><span class="co">Casilla obligatoria en el formulario digital, con correo y WhatsApp como canales separados.</span></div>
+      <div class="regla"><span class="palomita">✓</span><span class="qu">Categoría sin fines de lucro</span><span class="co">Actividad gratuita y abierta a cualquier asistente, sin transacción de por medio.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DATOS ================= -->
+<section>
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">07</span>
+      <h2>Los datos y el permiso</h2>
+      <p class="dek">Todo se captura dentro del formulario digital del test. No levantamos datos en papel. Pedimos nombre, correo, teléfono opcional y rango de edad.</p>
+    </div>
+    <div class="rv">
+      <div class="casilla">
+        <span class="bx">☐</span>Acepto que el Tecnológico de Monterrey use mis datos para enviarme el resultado de mi test y la información de los cursos de Educación Continua <strong>por correo electrónico</strong>.<span class="op">Obligatorio</span>
+      </div>
+      <div class="casilla">
+        <span class="bx">☐</span>Además, acepto recibir esta información <strong>por WhatsApp</strong>.<span class="op">Opcional</span>
+      </div>
+      <p style="color:var(--gris);font-size:15.5px;margin-top:14px;max-width:66ch">El botón de envío queda deshabilitado hasta que se marca la primera casilla. El QR del evento lleva un parámetro de origen para poder reportar por separado los contactos de esta edición. El correo de seguimiento sale dentro de las 48 horas, segmentado por rango de edad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MÉTRICAS ================= -->
+<section class="claro">
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">08</span>
+      <h2>Qué esperamos de un piloto</h2>
+      <p class="dek">Es la primera vez que Educación Continua participa en el Callejero. No tenemos un referente propio para calibrar cuánto convierte un stand así, y operamos con dos personas. Estas cifras son una línea base conservadora, no una meta de desempeño.</p>
+    </div>
+    <div class="metricas rv">
+      <div class="metrica">
+        <div class="cifra" data-hasta="60">0</div>
+        <div class="qu">Tests completos con consentimiento</div>
+        <div class="rango">Mínimo 40 · Stretch 90</div>
+      </div>
+      <div class="metrica">
+        <div class="cifra" data-hasta="40" data-sufijo="%">0</div>
+        <div class="qu">Contactos de 50 años o más</div>
+        <div class="rango">Mínimo 30% · Stretch 50%</div>
+      </div>
+      <div class="metrica">
+        <div class="cifra" data-hasta="180">0</div>
+        <div class="qu">Interacciones ligeras en muro y retos</div>
+        <div class="rango">Mínimo 120 · Stretch 280</div>
+      </div>
+      <div class="metrica">
+        <div class="cifra" data-hasta="48" data-sufijo=" h">0</div>
+        <div class="qu">Para enviar el correo de seguimiento</div>
+        <div class="rango">Máximo 72 h · Stretch 24 h</div>
+      </div>
+    </div>
+
+    <div class="encabezado rv" style="margin-top:60px;margin-bottom:26px">
+      <h2 style="font-size:clamp(22px,3vw,30px)">Lo que de verdad nos llevamos</h2>
+      <p class="dek">En un piloto lo que se aprende vale más que lo que se capta. Estos seis datos se registran durante la jornada y son el entregable real de la edición.</p>
+    </div>
+    <div class="scroll-x rv">
+      <table>
+        <thead><tr><th>Qué medimos</th><th>Para qué sirve la próxima vez</th></tr></thead>
+        <tbody>
+          <tr><td>Escaneos del QR contra tests completados</td><td>Dice si el problema está en detener gente o en la longitud del test</td></tr>
+          <tr><td>Tiempo promedio de llenado</td><td>Decide si conviene una versión corta de ocho preguntas</td></tr>
+          <tr><td>Dónde exactamente abandonan el formulario</td><td>Señala qué campo está costando contactos</td></tr>
+          <tr><td>Hora pico real de captación</td><td>Ajusta dónde concentrar al equipo</td></tr>
+          <tr><td>Cuántos usaron tablet contra celular propio</td><td>Define cuántos dispositivos llevar</td></tr>
+          <tr><td>Cuál de los cinco retos detuvo a más gente</td><td>Permite quedarse con dos o tres en lugar de cinco</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PENDIENTES ================= -->
+<section>
+  <div class="contenedor">
+    <div class="encabezado rv">
+      <span class="num">09</span>
+      <h2>Lo que falta resolver</h2>
+      <p class="dek">Los tres marcados en rojo dependen de nosotros, no de la organización, y pueden detener la propuesta. Vale la pena empezarlos aunque la convocatoria todavía no abra.</p>
+    </div>
+    <div class="rv" style="margin-bottom:34px">
+      <h3 style="margin-bottom:14px">Con la organización del Callejero</h3>
+      <div class="pendiente"><span class="pn">1</span><span class="pt">¿Hay corriente eléctrica en el toldo?<span class="pd">Define cuántas tablets llevamos y cómo iluminamos el QR de noche.</span></span></div>
+      <div class="pendiente"><span class="pn">2</span><span class="pt">¿Hay wifi del evento o dependemos de datos móviles?<span class="pd">Con 3,700 personas en dos cuadras la red celular se satura.</span></span></div>
+      <div class="pendiente"><span class="pn">3</span><span class="pt">¿El muro con marcadores y el letrero de Stroop cuentan como material permitido?<span class="pd">Los dos son reutilizables y no generan residuo, pero conviene declararlo por escrito.</span></span></div>
+      <div class="pendiente"><span class="pn">4</span><span class="pt">¿Se autoriza entregar stickers temporales?<span class="pd">Bajo el compromiso de recolectar y retirar el papel de respaldo. Es lo único que entregamos al público.</span></span></div>
+      <div class="pendiente"><span class="pn">5</span><span class="pt">¿Hay restricción para dinámicas de participación en redes durante el evento?</span></div>
+      <div class="pendiente"><span class="pn">6</span><span class="pt">¿Se permite fotografiar asistentes para el registro interno?</span></div>
+      <div class="pendiente"><span class="pn">7</span><span class="pt">Fecha límite y formato exacto del envío en la convocatoria.</span></div>
+    </div>
+    <div class="rv">
+      <h3 style="margin-bottom:14px">Internos, antes del 20 de septiembre</h3>
+      <div class="pendiente alerta"><span class="pn">8</span><span class="pt">Programar la casilla de consentimiento en el formulario<span class="pd">Hoy no existe, y es el único requisito que la organización marca como indispensable.</span></span></div>
+      <div class="pendiente alerta"><span class="pn">9</span><span class="pt">Autorizar el premio de la dinámica<span class="pd">Alguien tiene que poder comprometer ese lugar sin costo antes del evento. Si no, la dinámica no se publica.</span></span></div>
+      <div class="pendiente alerta"><span class="pn">10</span><span class="pt">Revisión legal de las bases<span class="pd">Para confirmar que elegir al ganador por criterio objetivo lo mantiene fuera del régimen de sorteos, que exige permiso de Gobernación con 30 días de anticipación.</span></span></div>
+      <div class="pendiente"><span class="pn">11</span><span class="pt">Confirmar que el Neurobienestar sigue arrancando el 23 de septiembre y que hay cupo<span class="pd">Si se sostiene, el stand del domingo señala un curso que empieza el miércoles siguiente a unas cuadras de ahí.</span></span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <p><strong>¿Qué vas a aprender este año?</strong></p>
+    <p>Propuesta de actividad para el Callejero de Distrito Tec, edición del domingo 20 de septiembre de 2026. Junco de la Vega entre Luis Elizondo y García Roel, frente al E1.</p>
+    <p>Educación Continua · Tec de Monterrey — Aprendizaje para el Futuro</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // barra de progreso
+  var barra = document.getElementById('barra');
+  function progreso(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    barra.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', progreso, {passive:true});
+  progreso();
+
+  if (reduce) {
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('vis'); });
+    document.querySelectorAll('.cifra').forEach(function(el){
+      el.textContent = el.dataset.hasta + (el.dataset.sufijo || '');
+    });
+    return;
+  }
+
+  // revelado al hacer scroll
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+
+  document.querySelectorAll('.rv').forEach(function(el, i){
+    el.style.transitionDelay = (Math.min(i,3) * 70) + 'ms';
+    obs.observe(el);
+  });
+
+  // conteo de métricas
+  var obsNum = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      obsNum.unobserve(el);
+      var fin = parseInt(el.dataset.hasta, 10);
+      var suf = el.dataset.sufijo || '';
+      var ini = performance.now(), dur = 1200;
+      function paso(t){
+        var p = Math.min((t - ini) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(fin * eased) + suf;
+        if (p < 1) requestAnimationFrame(paso);
+      }
+      requestAnimationFrame(paso);
+    });
+  }, {threshold:.5});
+
+  document.querySelectorAll('.cifra').forEach(function(el){ obsNum.observe(el); });
+})();
+</script>
+
+</body>
+</html>
